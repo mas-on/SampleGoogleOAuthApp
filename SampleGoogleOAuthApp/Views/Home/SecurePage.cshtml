@@ -1,0 +1,8 @@
+﻿@using System.Security.Claims
+@{
+    ViewData["Title"] = "User information";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Welcome, @(User.Identity?.Name ?? "unknown user") </p>
+<p>This is your Google Id: @User.FindFirst(ClaimTypes.NameIdentifier)?.Value</p>
